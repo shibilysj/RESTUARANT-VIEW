@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: white;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #7cf50a;
+  }
+  .carousel-indicators li {
+    border-color: #7cf50a;
+  }
+  .carousel-indicators li.active {
+    background-color:#7cf50a;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid#7cf50a;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #7cf50a;
+    background-color: #fff !important;
+    color: #7cf50a;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #7cf50a !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #7cf50a;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #7cf50a;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #7cf50a !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #7cf50a;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: .5s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  #boss p{
+    background-color: rgb(6, 125, 146);
+    border: 5px;
+    box-shadow: 10px 20px 25px black;
+    color: white;
+  }
+  #contact p{
+    background-color: rgb(6, 125, 146);
+    border: 5px;
+    box-shadow: 10px 20px 25px black;
+  }
+  #ourstory pre{
+    background-color: rgb(6, 133, 12);
+    border: 5px;
+    box-shadow: 10px 20px 25px black;
+    color: white;
+  }
+  #branches{
+    background-image: url("wlp.jpg");
+    background-position: cover;
+  }
+  #menu h2{
+    background-color: rgb(78, 5, 5);
+    border: 5px black;
+    box-shadow: 8px 15px 20px black;
+    font-family: initial;
+    color: white;
+  }
+  #branches h2{
+    color: white;
+  }
+  #menu h1{
+    color: black;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>   
+                             
+      </button>
+      
+      <a class="navbar-brand" href="#myPage">HOME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#fooditems">FOOD ITEMS</a></li>
+        <li><a href="#menu">MENU CARD</a></li>
+        <li><a href="#branches">BRANCHES</a></li>
+        <li><a href="#boss">BOSS</a></li>
+        <li><a href="#ourstory">OUR STORY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <!-- <div class=""col-md-6>
+
+  </div> -->
+  <div class=""col-md-12>
+    <img src="frst.jpeg" width="1565" height="300"><br>
+  </div></div><br><br>
+   <div class="Container">
+    <DIV CLASS="row">
+        <div class="col-md-4">
+            <img src="6 (2).jpg" height="300" width="400">
+        </div>
+        <div class="col-md-4">
+            <img src="ull.jpg" height="300" width="400">
+        </div>
+        <div class="col-md-4">
+          <img src="ull2.jpg" height="300" width="400">
+      </div>
+      <br><br>
+    </DIV>   
+</div>
+<CENTER><label style="font-style: italic;font: size large;color: #504f4f;"><u>"Laughter is Brightest Where Food is Best."</u></label></CENTER>
+<!-- Container (Food Items Section) -->
+
+<div id="fooditems" class="container-fluid text-center bg-grey">
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <!-- <ol class="carousel-indicators"><b>
+      <li data-target="#myCarousel" data-slide-to="0" >MANDI</li>
+      <li data-target="#myCarousel" data-slide-to="1">THALASSERY BIRIYANI</li>
+      <li data-target="#myCarousel" data-slide-to="2">ALPHAHAM</li>
+      <li data-target="#myCarousel" data-slide-to="3">PERI PERI</li>
+      <li data-target="#myCarousel" data-slide-to="4">KANDAREE</li>
+      <li data-target="#myCarousel" data-slide-to="5">GINGER</li>
+      <li data-target="#myCarousel" data-slide-to="6">KABAB</li>
+      <li data-target="#myCarousel" data-slide-to="7">AREEPPAM</li>
+      <li data-target="#myCarousel" data-slide-to="8">POTHUMKAAL</li>
+      <li data-target="#myCarousel" data-slide-to="9">OOTTUPATHIL</li>
+      <li data-target="#myCarousel" data-slide-to="10">CHICLEN CHATTY</li>
+      <li data-target="#myCarousel" data-slide-to="11">CHATTY CHOR</li>
+      <li data-target="#myCarousel" data-slide-to="12">KABSA</li>
+      <li data-target="#myCarousel" data-slide-to="13">KUNJIPATHIL</li>
+      <li data-target="#myCarousel" data-slide-to="14">CHAPPATHI</li> -->
+    <!-- </b></ol> -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox"><CENTER>
+      <h2 style="font-size:xx-large; color: #000000;"><u>FOOD ITEMS</u></h2><br>
+      <div class="item active">
+        <span><img src="240_F_226118827_U9dHWav1PcMnIV523MXQ0Nrneo60dRdy.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THALASSERY BIRIYANI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_258754907_aXsY3aN52N0i7lQ6lK1dVtUFwEUu6qcX.jpg"  class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">KUNJIPATHIL</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_279457884_YhFMyVEEcSWKhvzdMPcUJ1DFVsjV6hbV.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THAMDOORI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_314332245_64wphuYHYbfMsifXLJRNb35Kl8hV9Fy6.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">PERI PERI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_316375721_IoIIvImVAOhkc8odik71PjIi4w0Il1Iu.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">KANDARI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_324505480_RTE4AmVPsYP96f99g88gEwabe65mSvak.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">GINGER</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_328724912_3TLhY3DEMZY8nDNKsGY9N0sUfko5Yx6R.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">AREEPPAM</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_347055337_qF1BUSfnwBwMbxYoP9hTWHt9WyjKHkQy.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">KABAB</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_362623167_AwnoZihMICQvMhEygCJwLuPtCJY7tfnt.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">KIZHI POROTTA</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_376526254_ICfH0jpva4IgzNjdV89Wxsxi69yzO3hW.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">CHATTI CHOR</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_382971469_q19r59iw02s6AfIIg1WhT3ClfJVGvufb.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THALASSERY BIRIYANI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_385197091_KZPBcG6nS58VxdzYKmGUv8rT9iQXUgqf.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THALASSERY BIRIYANI</b>
+      </div>
+      <div class="item">
+        <span><img src="240_F_385197091_KZPBcG6nS58VxdzYKmGUv8rT9iQXUgqf.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THALASSERY BIRIYANI</b>
+        </div> 
+          <div class="item">
+          <span><img src="240_F_389796163_W97w4lg4OviFDSaDcqXSYiY2VMvSgfx3.jpg" class="d-block w-100" height="300"width="600"></span>
+      </div>
+    <!-- <div class="item">
+        <span><img src="240_F_385197091_KZPBcG6nS58VxdzYKmGUv8rT9iQXUgqf.jpg" class="d-block w-100" height="300"width="600"></span><br><b><label style="font-style: italic;font-size: large;color: #000000;">THALASSERY BIRIYANI</b>
+          <span><img src="240_F_90990026_TOpYSnzbQj9umMIYuEINsvwd64GhcVUv.jpg" class="d-block w-100" height="300"width="600"></span>
+      </div> -->
+    </CENTER>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  </div>
+
+<!-- Container (About Section) -->
+<div id="menu" class="container-fluid">
+  <h1><b><u><center>MENU CARD</center></u></b></h1><br>
+  
+    
+    <div class="col-sm-12">
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators  -->
+        <!--ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1">mandi</li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox"><CENTER>
+          <div class="item active">
+            <span><img src='m2.webp'  class="d-block w-100"height="400"width="700"></span>
+          </div>
+          <div class="item">
+            <span><img src="m3.webp" class="d-block w-100" height="400"width="700"></span>
+          </div>
+          <div class="item">
+            <span><img src="m4.webp" class="d-block w-100" height="400"width="700"></span>
+          </div>
+          <div class="item">
+            <span><img src="m5.webp" class="d-block w-100"height="400"width="700"></span>
+          </div> 
+          <div class="item">
+            <span><img src="m6.webp"  class="d-block w-100"height="400"width="700"></span>
+          </div>
+          <div class="item">
+            <span><img src="m7.webp"  class="d-block w-100"height="400"width="700"></span>
+          </div></CENTER>
+        </div> 
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>      
+ 
+<div class="row">
+  <div class="col-sm-4">
+       <h2>SHAAN-E-TANDOOR (VEGETARIAN)
+        き
+        Paneer Kalimirch Tikka (Vegetarian Delicacie) 139
+        Paneer Tikka
+        8 Pcs.
+        Pudina Panner Tikka
+        8 Pcs.
+        Achari Paneer Tikka
+        8 Pcs.
+        Ajwani Paneer Tikka
+        8 Pcs
+        Tandoori Mushroom
+
+        VEGETARIAN DELICACIES
+        ラ
+        Paneer Butter Masala
+        Shahi Paneer
+        Malai Kofta
+        Karahi Paneer
+        Palak Paneer
+        Mattat Paneer
+        Mattar Mushroom
+        Mushroom Mashala
+        Aloo Mattar
+        Jira Aloo
+        Mixed Vegetable
+        Dal Makhani
+        Yellow Dal kTadka
+        NAAN & ROTI
+        ?
+        Mughlai Paratha (Combo)
+        (Mutton / Chicken Kabab with Coke)
+        Mughlai Paratha (Mutton / Chicken)
+        Lazeez Qeema (Naan / Mutton / Chicken)
+        Allo Paratha
+        Paneer Paratha
+        Garlic Naan
+        Lachcha Paratha
+        Khameeri Butter Roti
+        Butter Naan
+        Plain Naan
+        Khameeri Roati
+        Butter Roti Tandoori
+        Rumali Roti
+        Tandoori Toti</h2>
+      </div>
+  <div class="col-md-4">
+<h2>SHAAN-E-TANDOOR (MURGH)
+  Afgani Chicken
+  4 Pcs.
+  Tandoori Chicken
+  4 Pcs.
+  Chicken Barra Spice
+  4 Pcs.
+  Murgha Malai Tikka
+  8 Pcs.
+  Chicken Tikka
+  8 Pcs.
+  Chicken Hariyali Tikka
+  8 Pcs.
+  Chicken Chapli Kabab
+  4 Pcs.
+  Chicken Seekh Kabab
+  4 Pcs.
+  Chicken Pudina Seekh Kabab
+  4 Pcs.
+  Chicken Gilafi Seekh Kabab
+  4 Pcs.
+  Chicken Kalmi Kabab
+  2 Pcs.
+  Chicken Tangri Kabab
+  2 Pcs.
+  Chicken Fry
+  2 Pcs.
+  T.Bagani Bahar
+  4 Pcs.
+  T.Bagani Bahar
+  8 Pcs.
+  Chicken Kali Mirch
+  8 Pcs.
+  Chicken Reshmi Kabab
+  8 Pcs.
+  Achari Chicken Tikka
+  8 Pcs.
+  Veg. Mix Platter
+  8 Pcs.
+
+  (Paneer Tikka, Tandoori Aloo. Tandoor Mushroom)
+  Non Veg. Mix Platter
+  8 Pcs.
+  289
+  (Chiken Tikka, Chiken Seek, Mutton Seek, Mutton Barra)
+  SHAAN-E-TANDOOR (MUTTON)
+  Mutton Barra
+  Mutton Lucknawi Barra
+  Mutton Kakori Kabab
+  Mutton Galawti Kabab
+  </h2>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Mutton Shami Kabab
+      Mutton Seekh Kabab
+      Mutton Gilaafi Seekh Kabab
+      Mutton Pudina Seekh Kabab
+  
+      SHAHI DASTAR KHWAN SE
+      ?
+      Murgh Musallam (Preperation in 30 mins.) 469
+      (2 Pcs.) (4 Pcs.)
+      Chicken Mughlai
+      Akbari Murgh Qorma
+      Murgh Stew
+      Murgh Nahari
+      Karahi Murgh
+      Butter Chicken
+      Butter Chicken Bonless
+      Jahangiri Murgh
+      Jahngiri Murgh Bonless
+      Mutton Jahangiri Oorma
+      Shahi Mutton Qurma
+      Karahi Mutton
+      Mutton Mughlai
+      Mutton Qeema Matar
+      Patha
+  
+      Mutton Qeema Aloo
+      Mutton Nahari
+      Mutton Qeema
+      Egg Curry
+      Chicken Mughlai
+      Akbari Murgh Qorma
+      Murgh Stew
+      Murgh Nahari
+      Karahi Murgh
+      Butter Chicken
+      Butter Chicken Bonless
+      Jahangiri Murgh
+      Jahngiri Murgh Bonless
+      Mutton Jahangiri Oorma
+      Shahi Mutton Qurma
+      Karahi Mutton
+      (2 Pcs.)</h2>
+  </div>
+  </div>
+  </div>
+
+<!-- Container (Branches Section) -->
+    
+  <div id="branches" class="container-fluid" >
+    <div class="text-center">
+      <CENTER><h2><u>BRANCHES</u></h2></CENTER><br>
+      <div class="container" >
+        <form>
+          <div class="row">
+            <div class="col-md-12"><b><h2 style="font-family: 'Times New Roman', Times, serif; color:white ;">KASARKODE-WAYANAD-KANNUR-CALICUT-TRISSUR-MALAPPURAM
+              ALAPPEY-COCHIN-KOLLAM-KOTTAYAM-IDUKKI-PATHANAMTHITTA-TRAVANCORE-PALAKKAD
+              BANGLORE-CHENNAI-PONDYCHERRY-MAHE-ERUMAD-KANYAKUMARI-NILAGIRI-THALOOR
+              THOOTHUKUDY-MYSOOR-GOODALLUR-VIRAJPETTA</h2></b>
+              <CENTER><h2 style="color: #dbcfcf;"><u>EMIRATES</u></h2></CENTER>
+              <CENTER><H2 style="font-family: 'Times New Roman', Times, serif;color: white;">UAE-BAHRAIN-KUWAIT-JIDDAH-SUADY_AREBIA-OMAN-QATAR-SHARJAH</H2></CENTER>
+  
+              </div></div>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div> 
+      
+  <div class="container-left">
+    <div class="demo-card-wrapper">
+      <div class="head">
+                   <h3 style="color: #303030;"><span class="large">Head Office</span></h3>
+              </div>
+              <div class="body1">
+             
+                              <span style="padding:10px 10px 0px 10px ;color:#000000;">AL RAHEEM RASTURANT</span>
+                              <p style="color:#000000; padding:0px 10px;">burj khalifa</p>
+                            <span style="padding:0px 10px;color:#000000;">592</span> <br />
+                            <span style="padding:0px 10px;color:#000000;">BURJ KHALIPHA,DU</span> <br />
+                             <span style="padding:0px 10px;color:#000000;">BLANK-67807964566546<br />
+               
+              </div>
+    </div>
+  </div>
+</div>
+<!-- fOUNDER SECTION -->
+<div id="boss" class="container-fluid text-center">
+  <h2><u>Boss</u></h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <p> Zubair Thai Valappil Mohammed--Thai Valappil Muhammad Suhail(13 june 2006), popularly known as 
+        Restaurant AL RAHEEM, was an A. He was one of the best carrier bulder 
+        he got the fully support of thai valappil family</p>
+        <p>        Restaurant AL Raheem Private Limited is an unlisted private company incorporated on 13 June, 2006.
+          It is classified as a private limited company and is located in , Dubai. 
+          It's authorized share capital is INR 25.00 lac and the total paid-up capital is INR 25.00 lac.
+          The current status of Restaurant AL Raheem Private Limited is - Active.
+          The last reported AGM (Annual General Meeting) of Restaurant AL Raheem Private Limited, per our records, was held on 30 November, 2021.
+          Also, as per our records, its last balance sheet was prepared for the period ending on 31 March, 2021.
+          Restaurant AL Raheem Private Limited has four directors 
+          Zubair Thai Valappil Mohammed--Thai Valappil Muhammad Suhail
+          The Corporate Identification Number (CIN) of Hotel Rahmath Private Limited is U55101KL2014PTC036734.
+          The registered office of Restaurant AL Raheem Private Limited is at 7/402, MUZALLA ROAD AL MARAI , DUBAI.</p>
+
+      <p>Mohammed Bin Rashid  played an important role in the formation of AL Raheem Restaurant, 
+        a worker cooperative initiative by organising the thrown out employees of AL Raheem  
+        of thai family to establish dubai in 2006.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="sheik.jpg" height="400" width="400">
+
+  </div>
+</div>
+
+<!-- Container (History Section) -->
+<div id="ourstory" class="container-fluid text-center">
+  <h2><u>OUR STORY</u></h2>
+  <div class="row" style="color: rgb(10, 240, 228);background-color: #f2ebeb;">
+    <div class="col-md-12">
+      <pre>
+        Restaurant AL Raheem Private Limited is an unlisted private company incorporated on 13 June, 2006.
+        It is classified as a private limited company and is located in , Dubai. 
+        It's authorized share capital is INR 25.00 lac and the total paid-up capital is INR 25.00 lac.
+        The current status of Restaurant AL Raheem Private Limited is - Active.
+        The last reported AGM (Annual General Meeting) of Restaurant AL Raheem Private Limited, per our records, was held on 30 November, 2021.
+        Also, as per our records, its last balance sheet was prepared for the period ending on 31 March, 2021.
+        Restaurant AL Raheem Private Limited has four directors 
+        Zubair Thai Valappil Mohammed--Thai Valappil Muhammad Suhail
+        The Corporate Identification Number (CIN) of Hotel Rahmath Private Limited is U55101KL2014PTC036734.
+        The registered office of Restaurant AL Raheem Private Limited is at 7/402, MUZALLA ROAD AL MARAI , DUBAI.
+      
+    
+      IN BIGIN
+      
+        AL Raheem Family Friendly Restaurant has been in Murfreesboro serving soul food for more than 16 years.
+        Our restaurant is focused on family and mainly because its run by one.
+        Our family consists of Muhammed(Father and head number cruncher), Saniba (Mother and The Boss) AL Raheem (Cook and Recipe inventor)
+        Our Father is a old hotel owner, our Mother is a house wife,
+        AL Raheem was a food and beverage director for a prominent health care facility and holds a degree in pre med.
+        We are truly the Arebian dream ,a melting pot of different ideas and creativity that makes our business unique.
+        Our parents worked up from the bottoms of taste and instilled in their children Muslim values and the importance of a work ethic.
+        "That has been our recipe for success"
+        We love to eat and we love to cook, so why not do what we like to do. 
+        They say if you work doing what you like to do you never work another day of your life.     
+        At AL Raheem we are committed to providing our customers with the best of quality food and service.
+        You will always be greeted with a warm smile and polite attitude from our employees.
+        All of our meats are cut by local butchers & all poultry is fresh and never frozen, 
+        unlike most restaurants in the city and when in season our vegetables are hand picked by Jeff and his family.
+        We work hard to provide soul food cooking that reminds our customers of coming home to a home cooked meal. 
+      </pre>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <LEFT><h2 class="text-center"><u>CONTACT</u></h2></LEFT>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Service options: Dine-in · Drive-through · No-contact delivery</p>
+      <p><span class="glyphicon glyphicon-time"></span> Open 06:00 am-Closes 10:30 pm</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>  Address: X8M2+C79, Thammanam - Pullepady Rd, DD Village, Thammanam, Ernakulam, Kerala 682017</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: 095748 10810</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> info@alraheem.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-4 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-4 form-group">
+          <input class="form-control" id="phone" name="phone" placeholder="Phone Number" type="text" required>
+        </div>
+        <div class="col-sm-4 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
